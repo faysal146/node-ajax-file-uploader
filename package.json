@@ -7,8 +7,11 @@
         "start": "node main.js"
     },
     "keywords": [],
-    "author": "",
+    "author": "Faysal Ahmed",
     "license": "ISC",
+    "engines": {
+        "node": "12.14.1"
+    },
     "dependencies": {
         "cors": "^2.8.5",
         "express": "^4.17.1",
