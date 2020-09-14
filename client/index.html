@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="shortcut icon"
+            href="/icons/favicon.ico"
+            type="image/x-icon"
+        />
+        <link rel="stylesheet" href="./style.scss" />
+        <title>Document</title>
+    </head>
+    <body>
+        <main class="main__uploader">
+            <div class="server-error-alert"></div>
+            <div class="uploader">
+                <h2 class="uploader__title">Uploader</h2>
+                <label
+                    for="file-input"
+                    class="uploader__upload"
+                    id="file-upload"
+                >
+                    <input
+                        type="file"
+                        id="file-input"
+                        name="file"
+                        accept=".jpg, .jpeg, .png, .pdf, .mp4, .zip, .txt"
+                        multiple
+                    />
+                    <div class="uploader__upload--icon">
+                        <img src="/icons/upload-icon.svg" alt="upload icons" />
+                    </div>
+                    <span class="uploader__upload--drag-drop">
+                        Drag And Drop
+                    </span>
+                    <span> or Browse files</span>
+                </label>
+                <div class="uploader__file"></div>
+            </div>
+            <div class="alert-container"></div>
+        </main>
+    </body>
+    <script>
+        //   const bg = [
+        //       'linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%)',
+        //       'linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)',
+        //       'linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)',
+
+        //       'linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)',
+        //       'linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%)',
+        //       'linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%)',
+        //       'linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%)',
+        //       'linear-gradient(90deg, #FAD961 0%, #F76B1C 100%)',
+        //       'linear-gradient(90deg, #FAD961 0%, #F76B1C 100%)',
+        //   ];
+        //   document.body.style.background = bg[3];
+        //   document.querySelector('.uploader').style.background = bg[5];
+    </script>
+    <script src="/src/index.js"></script>
+</html>

@@ -1,0 +1,24 @@
+{
+    "name": "upload-progress-bar",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "start": "node main.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "multer": "^1.4.2"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.0.0-0",
+        "@babel/plugin-proposal-class-properties": "^7.8.3",
+        "babel-core": "^6.26.3",
+        "babel-plugin-transform-runtime": "^6.23.0",
+        "babel-preset-env": "^1.7.0"
+    }
+}

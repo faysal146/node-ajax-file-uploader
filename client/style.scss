@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$font-color: #3b3b3bb4;
+$secondry-color: #5b73d1;
+$light-color: #cdcdcd;
+$warn: #ff8746;
+$font-family: 'Josefin Sans', sans-serif;
+
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: $font-family;
+    color: $font-color;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+}
+
+.main__uploader {
+    position: relative;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    // background: $secondry-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+}
+
+@mixin name {
+    & > button,
+    & > div.complete {
+        width: 1.5rem;
+        margin-left: auto;
+    }
+    .cancle-button {
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        outline: none;
+        display: block;
+        transition: 0.3s ease;
+        &:hover {
+            opacity: 0.8;
+        }
+        &:active {
+            transform: scale(0.8);
+        }
+        img {
+            pointer-events: none;
+        }
+    }
+}
+
+.server-error-alert {
+    top: 0;
+    left: 50%;
+    background: $warn;
+    position: absolute;
+    transform: translate(-50%, -100%);
+    width: 40rem;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 1rem;
+    color: #fff;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    box-shadow: 0 5px 5px rgba(000, 000, 000, 0.1);
+}
+.show-alert {
+    animation: showAlert 0.4s ease forwards;
+    @keyframes showAlert {
+        100% {
+            transform: translate(-50%, 5%);
+        }
+    }
+}
+
+.highlight {
+    border: 2px solid $secondry-color !important;
+    transform: scale(1.05);
+    transition: all 0.1s ease-in-out;
+}
+
+.uploader {
+    width: 55rem;
+    background-color: rgba(255, 255, 255, 0.796);
+    box-shadow: 0 10px 15px rgba(#000, 0.3);
+    padding: 2em 3em;
+    border-radius: 2rem;
+    &__title {
+        font-size: 2.5rem;
+    }
+    &__form {
+        display: none;
+    }
+    &__upload {
+        margin: 2em 0;
+        padding: 0.5em;
+        border: 2px solid #cdcdcd;
+        border-radius: 2rem;
+        color: lighten(#000, 40);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        &--icon {
+            margin-right: 0.8em;
+            margin-top: 0.5em;
+            img {
+                display: inline-block;
+                width: 40px;
+            }
+        }
+        &--drag-drop {
+            color: $secondry-color;
+            margin-right: 0.2em;
+        }
+    }
+    &__file {
+        &-item {
+            font-size: 1.4rem;
+            display: grid;
+            grid-template-columns: 40% auto 3rem;
+            grid-gap: 1rem;
+            padding: 1em 0;
+            align-items: center;
+            border: 1px solid transparent;
+            border-bottom-color: $light-color;
+            .file-info {
+                display: flex;
+                align-items: center;
+            }
+            .file-name {
+                margin-left: 0.7rem;
+            }
+            .file-icon {
+                width: 2rem;
+            }
+        }
+        &--progress {
+            .progess-bar {
+                width: 100%;
+                background: $light-color;
+                height: 0.7rem;
+                border-radius: 2rem;
+                position: relative;
+                overflow: hidden;
+                margin-top: 1rem;
+                .bar {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    // width: 100%;
+                    height: 100%;
+                    background: $secondry-color;
+                    border-radius: 2rem;
+                    transition: all 0.5s;
+                }
+            }
+            .progess-status {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 0.2em;
+                margin-top: 0.4rem;
+            }
+        }
+        &--control {
+            @include name;
+        }
+    }
+}
+#file-input {
+    display: none;
+}
+img {
+    display: block;
+    width: 100%;
+}
+
+.remove-file {
+    animation: removeFile 0.6s forwards ease;
+}
+@keyframes removeFile {
+    100% {
+        opacity: 0;
+    }
+}
+
+.alert-container {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    .alert {
+        display: grid;
+        margin-bottom: 1rem;
+        width: 20rem;
+        grid-template-columns: 2rem auto 2rem;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        grid-gap: 1rem;
+        @include name;
+        transition: all 0.3s;
+        box-shadow: 0 10px 15px rgba(000, 000, 000, 0.2);
+        background: $warn;
+        color: #fff;
+    }
+}
