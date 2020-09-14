@@ -3,6 +3,7 @@ const multer = require('multer');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const constants = require('./constants');
 
 const app = express();
 
@@ -25,5 +26,7 @@ app.post('/upload', upload.array('file'), (req, res) => {
     res.send('uploaded');
 });
 
-const PORT = process.env.PORT || 2000;
-app.listen(PORT, () => console.log('server is listen on port ' + PORT));
+const PORT = process.env.PORT || constants.port;
+app.listen(PORT, () =>
+    console.log('server is listen on port ' + constants.port)
+);
